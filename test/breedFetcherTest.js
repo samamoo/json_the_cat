@@ -15,10 +15,11 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
-  it('returns sorry if invalid/non-existant breed type is entered', function() {
+  it('returns sorry if invalid/non-existant breed type is entered', function(done) {
     fetchBreedDescription('Belrog', (err, desc) => {
       assert.equal(err, 'Sorry! Your requested breed was not found.');
       assert.equal(desc, null);
+      done();
     });
   });
 });
